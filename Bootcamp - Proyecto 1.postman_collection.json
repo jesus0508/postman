@@ -1,0 +1,140 @@
+{
+	"info": {
+		"_postman_id": "ef968348-2b20-48a1-995d-1e1b20cd0de1",
+		"name": "Bootcamp - Proyecto 1",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "MSCustomers",
+			"item": [
+				{
+					"name": "POST CUSTOMER",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"names\":\"Pedro\",\r\n    \"firstSurname\":\"Castillo\",\r\n    \"lastSurname\":\"Terrones\",\r\n    \"dni\": \"56781234\",\r\n    \"email\": \"pedro.castillo@gmail.com\",\r\n    \"customerType\": \"PERSONAL\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9081/customers",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9081",
+							"path": [
+								"customers"
+							]
+						},
+						"description": "http://localhost:9081/customers"
+					},
+					"response": []
+				},
+				{
+					"name": "POST Customer",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"names\":\"Pedro\",\r\n    \"firstSurname\":\"Castillo\",\r\n    \"lastSurname\":\"Terrones\",\r\n    \"dni\": \"56781234\",\r\n    \"email\": \"pedro.castillo@gmail.com\",\r\n    \"customerType\": \"PERSONAL\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9081/customers",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9081",
+							"path": [
+								"customers"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "MSBankAccounts",
+			"item": [
+				{
+					"name": "PATCH BankAccountState",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"bankAccountNumber\": \"123\",\r\n    \"bankAccountState\": \"LOCK\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9082/bank-accounts/bank-account-number/123",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9082",
+							"path": [
+								"bank-accounts",
+								"bank-account-number",
+								"123"
+							]
+						},
+						"description": "http://localhost:9082/bank-accounts/bank-account-number/{bankAccountNumber}"
+					},
+					"response": []
+				},
+				{
+					"name": "POST BankAccount",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"bankAccountNumber\": \"123123169\",\r\n    \"balance\": 1000,\r\n    \"accountHolderId\": \"622eb6f5c87bf81ece617094\",\r\n    \"bankAccountType\": \"CURRENT\",\r\n    \"bankAccountState\": \"UNLOCK\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9082/bank-accounts/account-holder-id/622cb58fd6b72d70eaa893bf",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9082",
+							"path": [
+								"bank-accounts",
+								"account-holder-id",
+								"622cb58fd6b72d70eaa893bf"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
