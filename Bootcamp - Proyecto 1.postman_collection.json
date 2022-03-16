@@ -54,6 +54,35 @@
 						}
 					},
 					"response": []
+				},
+				{
+					"name": "PUT Customer",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"names\":\"Jorge\",\r\n    \"firstSurname\":\"Montoya\",\r\n    \"lastSurname\":\"Manrique\",\r\n    \"dni\": \"56781234\",\r\n    \"email\": \"jorge.montoya@gmail.com\",\r\n    \"customerType\": \"PERSONAL\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9081/customers/622cb58fd6b72d70eaa893bf",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9081",
+							"path": [
+								"customers",
+								"622cb58fd6b72d70eaa893bf"
+							]
+						}
+					},
+					"response": []
 				}
 			]
 		},
@@ -98,7 +127,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"bankAccountNumber\": \"123123169\",\r\n    \"balance\": 1000,\r\n    \"accountHolderId\": \"622eb6f5c87bf81ece617094\",\r\n    \"bankAccountType\": \"CURRENT\",\r\n    \"bankAccountState\": \"UNLOCK\"\r\n}\r\n",
+							"raw": "{\r\n    \"bankAccountNumber\": \"123123169\",\r\n    \"balance\": 1000,\r\n    \"accountHolderId\": \"622cb58fd6b72d70eaa893bf\",\r\n    \"bankAccountType\": \"SAVING\",\r\n    \"bankAccountState\": \"UNLOCK\"\r\n}\r\n",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -106,16 +135,14 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:9082/bank-accounts/account-holder-id/622cb58fd6b72d70eaa893bf",
+							"raw": "http://localhost:9082/bank-accounts",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
 							"port": "9082",
 							"path": [
-								"bank-accounts",
-								"account-holder-id",
-								"622cb58fd6b72d70eaa893bf"
+								"bank-accounts"
 							]
 						}
 					},
@@ -147,7 +174,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:9082/bank-accounts/account-holder-id/622eb6f5c87bf81ece617094",
+							"raw": "http://localhost:9082/bank-accounts/account-holder-id/622cb58fd6b72d70eaa893bf",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -156,7 +183,98 @@
 							"path": [
 								"bank-accounts",
 								"account-holder-id",
-								"622eb6f5c87bf81ece617094"
+								"622cb58fd6b72d70eaa893bf"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET BankAccount by AccountNumber",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9082/bank-accounts/bank-account-number/123123169",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9082",
+							"path": [
+								"bank-accounts",
+								"bank-account-number",
+								"123123169"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET All BankAccount by Type",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9082/bank-accounts/bank-account-type/SAVING",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9082",
+							"path": [
+								"bank-accounts",
+								"bank-account-type",
+								"SAVING"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET BankingTransaction by BankAccountNumber",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9082/banking-transactions/bank-account-number/123123169",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9082",
+							"path": [
+								"banking-transactions",
+								"bank-account-number",
+								"123123169"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "POST BankingTransaction",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"fromBankAccount\": \"123123169\",\r\n    \"amount\": 8000,\r\n    \"bankingTransactionType\": \"DEPOSIT\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9082/banking-transactions",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9082",
+							"path": [
+								"banking-transactions"
 							]
 						}
 					},
