@@ -83,6 +83,14 @@
 						}
 					},
 					"response": []
+				},
+				{
+					"name": "GET Customer By ID",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
 				}
 			]
 		},
@@ -275,6 +283,47 @@
 							"port": "9082",
 							"path": [
 								"banking-transactions"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "MSCredits",
+			"item": [
+				{
+					"name": "Get All Credits By CustomerId",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "POST Credit",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"principal\": 10000,\r\n\t\"customerId\": \"622cb58fd6b72d70eaa893bf\",\r\n\t\"creditType\": \"BUSINESS\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9083/credits",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9083",
+							"path": [
+								"credits"
 							]
 						}
 					},
